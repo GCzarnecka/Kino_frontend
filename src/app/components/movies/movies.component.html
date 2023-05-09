@@ -1,0 +1,12 @@
+<!--<ng-image-slider [images]="movies"-->
+<!--                 [imagePopup]="false" [infinite]="true"-->
+<!--                 (imageClick) = "showImage($event)"-->
+<!--                 [imageSize]="{width: '220px', height: '300px', space: 4}" #nav>-->
+<!--  -->
+<!--</ng-image-slider>-->
+
+
+
+<div class="movies-container" >
+  <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+</div>

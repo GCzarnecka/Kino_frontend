@@ -1,0 +1,13 @@
+mat-toolbar-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-toolbar {
+  background-color: #424242;
+}
+
+
+p {
+  color: white;
+}

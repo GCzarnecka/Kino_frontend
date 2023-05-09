@@ -1,0 +1,24 @@
+<div class ="container">
+<!--  <mat-card class = "movie">-->
+<!--  <mat-grid-list class = "movie">-->
+  <div class ="item">
+    <img [src]="screenings[0].movie.poster">
+  </div>
+  <div class ="item">
+    <div class ="desc">
+      <div>{{screenings[0].movie.title}}</div>
+      <div>{{screenings[0].movie.category.name}}</div>
+
+      <div class="description">{{screenings[0].movie.description}}</div>
+    </div>
+    <ul>
+      <li *ngFor="let screening of screenings">
+        {{screening.id }} - {{screening.startTime}}
+      </li>
+    </ul>
+  </div>
+
+
+<!--</mat-grid-list>-->
+
+  </div>
