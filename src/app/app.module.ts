@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { HomeComponent } from './components/home/home.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -21,6 +21,9 @@ import {AppRoutingModule} from "./app-routing.module";
 import {MatIcon, MatIconModule} from "@angular/material/icon";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import { LoggedControllsComponent } from './components/logged-controlls/logged-controlls.component';
+import {AuthInterceptor} from "./services/auth-interceptor.interceptor";
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MovieComponent,
     LoginComponent,
     RegisterComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    LoggedControllsComponent,
+    UserSettingsComponent
   ],
     imports: [
         BrowserModule,
@@ -48,7 +53,9 @@ import {MatGridListModule} from "@angular/material/grid-list";
         MatIconModule,
         MatGridListModule
     ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

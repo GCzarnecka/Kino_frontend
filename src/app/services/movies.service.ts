@@ -10,10 +10,10 @@ export class MoviesService {
   constructor(private restService: RestService) { }
 
   getMovies() {
-    return this.restService.get<Movie[]>("movies");
+    return this.restService.get<Movie[]>("api/movies");
   }
 
   postMovie(movie: Movie) {
-    return this.restService.post<Movie>("movies", movie);
+    return this.restService.post<Movie>("api/movies", movie);
   }
 }

@@ -9,10 +9,15 @@
     <p>
       SPOTER
     </p>
-    <div>
+    <div *ngIf="!token">
       <button mat-fab extended type="submit" [routerLink] = "'login'" >Login</button>
       <button mat-fab extended type="submit" [routerLink] =" 'register'">Register</button>
     </div>
+
+    <div *ngIf="token">
+      <app-logged-controlls></app-logged-controlls>
+    </div>
+
 
   </mat-toolbar-row>
 

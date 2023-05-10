@@ -3,10 +3,10 @@ import {MessageComplaint} from "./MessageComplaint";
 
 export interface User {
   id: number;
-  username: string;
+  name: string;
   password: string;
   email: string;
-  isAdmin: boolean;
+  Role: string;
   surname: string;
   age: number;
   reservations: Reservation[];

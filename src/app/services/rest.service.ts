@@ -6,7 +6,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 })
 export class RestService {
 
-  private url = "http://localhost:8080/api/";
+  private url = "http://localhost:8080/";
 
   private httpOptions = {
     headers: new Headers({
