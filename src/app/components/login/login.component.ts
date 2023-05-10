@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {AuthService} from "../../services/auth.service";
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService : AuthService, private router: Router) { }
 
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
@@ -24,7 +25,7 @@ export class LoginComponent {
         token => {
           console.log(token);
           localStorage.setItem('authToken', token.token);
-          // window.location.reload();
+          this.router.navigate(['/', 'home']);
         }
       );
 
