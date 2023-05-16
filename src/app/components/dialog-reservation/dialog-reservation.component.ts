@@ -10,9 +10,11 @@ import {Screening} from "../../DataModel/Screening";
 export class DialogReservationComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogReservationComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Screening,
+    @Inject(MAT_DIALOG_DATA) public screening: Screening,
   ) {}
-
+  ngOnInit(): void {
+    console.log("dddd", this.screening);
+  }
   onNoClick(): void {
     this.dialogRef.close();
   }

@@ -29,8 +29,9 @@ export class MovieDetailsComponent {
 
   }
   openDialog(screening: Screening): void {
+    console.log(screening,'dialog');
     const dialogRef = this.dialog.open(DialogReservationComponent, {
-      data: {screening: screening},
+      data: screening,
     });
 
     dialogRef.afterClosed().subscribe();
@@ -52,7 +53,6 @@ export class MovieDetailsComponent {
 
   }
    showScreenings(date: Date) {
-  console.log("aaaaaaaa",date.toISOString());
     this.showedScreenings = this.screenings.filter(screening => {
       screening.startTime = new Date(screening.startTime);
       return screening.startTime.getDay()=== date.getDay() && screening.startTime.getMonth() === date.getMonth() && screening.startTime.getFullYear() === date.getFullYear();

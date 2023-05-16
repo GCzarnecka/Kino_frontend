@@ -10,7 +10,7 @@ export class ScreeningsService {
   constructor(private restService: RestService) { }
 
   getScreeningsForMovie(movieId: number) {
-    return this.restService.get<Screening[]>("api/screenings", {movieId: movieId});
+    return this.restService.get<Screening[]>('api/screenings', {movieId: movieId});
   }
 
 }
