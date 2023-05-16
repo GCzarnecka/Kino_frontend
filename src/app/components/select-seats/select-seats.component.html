@@ -1,0 +1,7 @@
+
+<div class="sector" *ngFor="let sector of seats; let i = index">
+  <div class="sector-num">{{i}}</div>
+  <div class="seat" (click)="onSeatClick(seat)" [class.taken]="seat.isTaken" *ngFor="let seat of sector; let j = index">
+    <div class="seat-num">{{j}}</div>
+  </div>
+</div>

@@ -11,10 +11,20 @@
 
       <div class="description">{{screenings[0].movie.description}}</div>
     </div>
+    <ul class ="days">
+      <button (click)="pickDate(day)" class="day" *ngFor="let day of getDays()">
+         {{day}}
+        </button>
+    </ul>
+
+    <div class="pickedDate">
+      {{pickedDate}}
+    </div>
+
     <ul>
-      <li *ngFor="let screening of screenings">
+      <button class="screening" (click)="openDialog(screening)" *ngFor="let screening of showedScreenings">
         {{screening.id }} - {{screening.startTime}}
-      </li>
+      </button>
     </ul>
   </div>
 

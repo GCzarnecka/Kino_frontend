@@ -1,0 +1,20 @@
+mat-dialog-content{
+  width: 600px;
+}
+
+.flex{
+  display: flex;
+}
+/*button{*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+
+.flex div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+
+}

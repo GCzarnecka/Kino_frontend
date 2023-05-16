@@ -5,5 +5,4 @@ export interface Seat{
   sectorNumber: number;
   isTaken: boolean;
   seatNumber: number;
-  cinemaRoom: CinemaRoom;
 }

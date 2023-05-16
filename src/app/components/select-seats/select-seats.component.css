@@ -1,0 +1,30 @@
+.sector{
+  display: flex;
+}
+
+.seat{
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 5px;
+  cursor: pointer;
+  background-color: limegreen;
+  cursor: pointer;
+}
+
+.sector-num{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat-num{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.taken {
+  background-color: red;
+}

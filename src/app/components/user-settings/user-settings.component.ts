@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Seat} from "../../DataModel/Seat";
 
 @Component({
   selector: 'app-user-settings',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-settings.component.css']
 })
 export class UserSettingsComponent {
+
 
 }
