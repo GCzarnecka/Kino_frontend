@@ -6,7 +6,7 @@ export interface User {
   name: string;
   password: string;
   email: string;
-  Role: string;
+  role: string;
   surname: string;
   age: number;
   reservations: Reservation[];

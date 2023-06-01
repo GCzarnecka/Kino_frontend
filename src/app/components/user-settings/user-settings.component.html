@@ -4,6 +4,9 @@
     {{reservation.screening.movie.title}} -
     {{reservation.screening.cinemaRoom.name}} -
     {{reservation.screening.startTime}} -
-    {{reservation.seatsIds}}
+    {{reservation.seatsIds}}-
+    <button *ngIf="!reservation.paid" mat-flat-button color="primary" (click)="pay(reservation)">Pay for reservation</button>
+<!--    <button mat-flat-button color="warn" (click)="deleteReservation(reservation.id)">Delete</button>-->
+
   </li>
 </ul>

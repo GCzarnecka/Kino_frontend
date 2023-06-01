@@ -29,7 +29,10 @@ export class MoviesComponent {
     //   this.movies.push({image: movie.poster, title: movie.title, thumbImage: movie.poster});
     //   console.log(movie);
     // }));
-    this.moviesService.getMovies().subscribe(movies => this.movies = movies);
+    this.moviesService.getMovies().subscribe(movies => {
+      this.movies = movies;
+      console.log(this.movies);
+    });
     // this.screeingsService.getScreeningsForMovie(6).subscribe(screenings =>
     //   console.log(screenings));
   }

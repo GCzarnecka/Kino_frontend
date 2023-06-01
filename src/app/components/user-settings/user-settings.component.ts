@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Seat} from "../../DataModel/Seat";
 import {UserService} from "../../services/user.service";
 import {User} from "../../DataModel/User";
+import {Reservation} from "../../DataModel/Reservation";
 
 @Component({
   selector: 'app-user-settings',
@@ -21,6 +22,10 @@ export class UserSettingsComponent {
       this.user = user
       console.log(this.user)
     });
+
+  }
+
+  pay(reservation: Reservation) {
 
   }
 }

@@ -86,4 +86,8 @@ export class MovieInfoComponent implements OnInit{
   console.log(this.movie);
     this.movieService.postMovie(this.movie).subscribe();
   }
+
+  goBack() {
+    window.history.back();
+  }
 }
