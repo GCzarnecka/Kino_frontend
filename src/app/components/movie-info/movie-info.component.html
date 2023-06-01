@@ -1,0 +1,68 @@
+<div class ="container">
+  <h2>{{edit? 'Edit movie': 'Create movie'}}</h2>
+
+  <p *ngIf="edit">
+    <mat-form-field>
+      <mat-label>Movies</mat-label>
+      <mat-select [(ngModel)]="movie">
+        <mat-option *ngFor="let movie of movies" [value]="movie">{{movie.title}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+
+  <p>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input [(ngModel)]="movie.title" matInput>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <mat-select [compareWith]="compareObjects" [(ngModel)]="movie.author">
+        <mat-option *ngFor="let author of authors" [value]="author">{{author.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea [(ngModel)]="movie.description" matInput></textarea>
+  </mat-form-field>
+
+  <p>
+    <mat-form-field>
+      <input [(ngModel)]="movie.duration" type="number" matInput placeholder="Duration" >
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input [(ngModel)]="movie.ageRestriction" type="number" matInput placeholder="Age Restriction">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select [compareWith]="compareObjects" [(ngModel)]="movie.category">
+        <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <mat-label>Poster</mat-label>
+      <input [(ngModel)]="movie.poster" matInput>
+    </mat-form-field>
+  </p>
+
+</div>
+
+<div class="btns">
+  <button mat-raised-button color="primary" (click)="saveChanges()">Save</button>
+  <button mat-raised-button color="warn">Cancel</button>
+</div>

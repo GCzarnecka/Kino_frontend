@@ -1,0 +1,15 @@
+
+h1{
+  color: #ffff;
+
+}
+button{
+  margin-left: 10px;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+}

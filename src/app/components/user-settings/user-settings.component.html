@@ -2,7 +2,7 @@
 <ul>
   <li *ngFor="let reservation of user.reservations">
     {{reservation.screening.movie.title}} -
-    {{reservation.screening.cinemaRoom}} -
+    {{reservation.screening.cinemaRoom.name}} -
     {{reservation.screening.startTime}} -
     {{reservation.seatsIds}}
   </li>

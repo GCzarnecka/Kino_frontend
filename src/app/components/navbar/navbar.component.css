@@ -11,3 +11,7 @@ mat-toolbar {
 p {
   color: white;
 }
+.container button{
+  margin-right: 10px;
+
+}

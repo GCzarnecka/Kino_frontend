@@ -28,6 +28,9 @@ import { DialogReservationComponent } from './components/dialog-reservation/dial
 import {MatDialogModule} from "@angular/material/dialog";
 import { SelectSeatsComponent } from './components/select-seats/select-seats.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { MovieInfoComponent } from './components/movie-info/movie-info.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -43,25 +46,28 @@ import { PaymentComponent } from './components/payment/payment.component';
     UserSettingsComponent,
     DialogReservationComponent,
     SelectSeatsComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminPanelComponent,
+    MovieInfoComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSlideToggleModule,
-    MatCardModule,
-    NgImageSliderModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    AppRoutingModule,
-    MatIconModule,
-    MatGridListModule,
-    MatDialogModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatSlideToggleModule,
+        MatCardModule,
+        NgImageSliderModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        AppRoutingModule,
+        MatIconModule,
+        MatGridListModule,
+        MatDialogModule,
+        FormsModule,
+        MatSelectModule
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

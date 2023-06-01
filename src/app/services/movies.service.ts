@@ -12,6 +12,9 @@ export class MoviesService {
   getMovies() {
     return this.restService.get<Movie[]>("api/movies");
   }
+  getMovie(id: number) {
+    return this.restService.get<Movie>("api/movie/"+id);
+  }
 
   postMovie(movie: Movie) {
     return this.restService.post<Movie>("api/movies", movie);

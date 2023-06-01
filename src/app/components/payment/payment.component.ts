@@ -34,7 +34,7 @@ export class PaymentComponent {
     });
   }
 
-  buy() {
+  buy(paid: boolean) {
     // this.screening.price = 10;
     this.takenSeats.forEach(seatId => {
       this.screening.seats.forEach(seat => {
@@ -44,48 +44,23 @@ export class PaymentComponent {
       });
     });
     console.log(this.takenSeats,'takenSeats');
-      const reservation: Reservation = {
-        screening: this.screening,
-        seatsIds: this.takenSeats,
-        price: this.takenSeats.length * this.screening.price,
-        paid: true,
-        // price: 20,
-        reservationTime : new Date(),
-        id: 0,
-        archived: false
-      }
+    const reservation: Reservation = {
+      screening: this.screening,
+      seatsIds: this.takenSeats,
+      price: this.takenSeats.length * this.screening.price,
+      paid: paid,
+      // price: 20,
+      reservationTime : new Date(),
+      id: 0,
+      archived: false
+    }
 
-      console.log(reservation,'reservation');
+    console.log(reservation,'reservation');
 
 
-      this.reservationService.placeReservation(reservation).subscribe();
-      // this.restService.post('logged/place-order', {...reservation}).subscribe();
+    this.reservationService.placeReservation(reservation).subscribe();
+    // this.restService.post('logged/place-order', {...reservation}).subscribe();
 
     this.router.navigate(['/', 'home']);
-
-
-
-    // this.http.get("http://localhost:8080/logged/user",
-     //  { headers:
-     //      new HttpHeaders({'Authorization': 'Bearer ' +
-     //          "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb3NpYXh4eEBnbWFpbC5jb20iLCJpYXQiOjE2ODQ5NTc3NDEsImV4cCI6MTY4NDk5Mzc0MX0.jKK1Ap7hSv-F91VtZKp9MfR8OnI6EbXm6ZXdknlyY5c"})}).subscribe();
-
-    // const url = 'http://localhost:8080/logged/user';
-    // const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnb3NpYXh4eEBnbWFpbC5jb20iLCJpYXQiOjE2ODQ5NTc3NDEsImV4cCI6MTY4NDk5Mzc0MX0.jKK1Ap7hSv-F91VtZKp9MfR8OnI6EbXm6ZXdknlyY5c';
-    //
-    // const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
-    //
-    // this.http.get(url, { headers }).subscribe(
-    //   (response) => {
-    //     // Obsłuż otrzymaną odpowiedź
-    //     console.log(response);
-    //   },
-    //   (error) => {
-    //     // Obsłuż błąd żądania
-    //     console.error(error);
-    //   }
-    // );
-
-
   }
 }
