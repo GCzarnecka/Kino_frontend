@@ -8,5 +8,6 @@ export interface Screening{
   cinemaRoom: CinemaRoom;
   startTime: Date;
 
+  price: number;
   seats: Array<Seat>;
 }

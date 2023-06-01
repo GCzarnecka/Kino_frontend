@@ -20,7 +20,8 @@ export class LoggedControllsComponent {
   }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe( user => {
+    this.userService.getUser(
+    ).subscribe( user => {
       this.name = user.name
     });
   }

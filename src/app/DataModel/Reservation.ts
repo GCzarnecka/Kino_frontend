@@ -4,11 +4,10 @@ import {Seat} from "./Seat";
 
 export interface Reservation{
   id: number;
-  user: User;
   screening: Screening;
-  seats: Seat[];
+  seatsIds: Number[];
   price: number;
   paid: boolean;
-  reservationDate: Date;
+  reservationTime: Date;
   archived: boolean;
 }

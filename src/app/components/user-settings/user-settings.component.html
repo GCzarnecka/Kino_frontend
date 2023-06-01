@@ -1,1 +1,9 @@
-<p>user-settings works!</p>
+{{user.email}}
+<ul>
+  <li *ngFor="let reservation of user.reservations">
+    {{reservation.screening.movie.title}} -
+    {{reservation.screening.cinemaRoom}} -
+    {{reservation.screening.startTime}} -
+    {{reservation.seatsIds}}
+  </li>
+</ul>

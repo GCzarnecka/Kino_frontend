@@ -1,12 +1,16 @@
 <h1 mat-dialog-title>Provide ticket number:</h1>
 <div mat-dialog-content>
   <div class="flex">
-  <app-select-seats [screening]="screening"></app-select-seats>
+  <app-select-seats (newItemEvent)="updateSeats($event)" [screening]="screening"></app-select-seats>
 
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Go back</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Purchase </button>
+<!--  <a routerLink="/movie-details/{{movie.id}}">-->
+    <button mat-button  (click)="onReserveClick()">Reserve</button>
+
+
+    <!--  <button mat-button [mat-dialog-close]="screening" cdkFocusInitial>Purchase </button>-->
 </div>
 
 </div>

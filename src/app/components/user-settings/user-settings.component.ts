@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Seat} from "../../DataModel/Seat";
+import {UserService} from "../../services/user.service";
+import {User} from "../../DataModel/User";
 
 @Component({
   selector: 'app-user-settings',
@@ -9,4 +11,16 @@ import {Seat} from "../../DataModel/Seat";
 export class UserSettingsComponent {
 
 
+  constructor(private userService: UserService) {
+  }
+
+  user!: User;
+
+  ngOnInit(): void {
+    this.userService.getUser().subscribe(user => {
+      this.user = user
+      console.log(this.user)
+    });
+
+  }
 }

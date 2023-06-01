@@ -27,6 +27,7 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
 import { DialogReservationComponent } from './components/dialog-reservation/dialog-reservation.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { SelectSeatsComponent } from './components/select-seats/select-seats.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SelectSeatsComponent } from './components/select-seats/select-seats.com
     LoggedControllsComponent,
     UserSettingsComponent,
     DialogReservationComponent,
-    SelectSeatsComponent
+    SelectSeatsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
