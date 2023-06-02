@@ -2,6 +2,8 @@ import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Screening} from "../../DataModel/Screening";
 import {Router} from "@angular/router";
+import {Reservation} from "../../DataModel/Reservation";
+import {ReservationService} from "../../services/reservation.service";
 
 @Component({
   selector: 'app-dialog-reservation',
@@ -12,27 +14,44 @@ export class DialogReservationComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogReservationComponent>,
     @Inject(MAT_DIALOG_DATA) public screening: Screening,
-    private router: Router
+    private router: Router,
+    private reservationService: ReservationService
   ) {}
 
   private takenSeats: number[] = [];
 
-  ngOnInit(): void {
-    console.log("dddd", this.screening);
-  }
   onNoClick(): void {
     this.dialogRef.close();
-  }
-
-  onReserveClick() {
-    this.dialogRef.close();
-    console.log("HALOOOOO",this.screening);
-    this.router.navigate(['/', 'payment', {screening: JSON.stringify(this.screening), takenSeats: JSON.stringify(this.takenSeats)}]);
   }
 
   updateSeats($event: { takenSeats: number[]; screening: Screening }) {
     console.log($event);
     this.screening = $event.screening;
     this.takenSeats = $event.takenSeats;
+  }
+
+  buy(paid: boolean) {
+    this.takenSeats.forEach(seatId => {
+      this.screening.seats.forEach(seat => {
+        if (seat.id === seatId) {
+          seat.taken = true;
+        }
+      });
+    });
+
+    const reservation: Reservation = {
+      screening: this.screening,
+      seatsIds: this.takenSeats,
+      price: this.takenSeats.length * this.screening.price,
+      paid: paid,
+      // price: 20,
+      reservationTime : new Date(),
+      id: 0,
+      archived: false
+    }
+
+    this.reservationService.placeReservation(reservation).subscribe();
+
+    this.dialogRef.close();
   }
 }

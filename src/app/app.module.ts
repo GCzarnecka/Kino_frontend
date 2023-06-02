@@ -27,13 +27,13 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
 import { DialogReservationComponent } from './components/dialog-reservation/dialog-reservation.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { SelectSeatsComponent } from './components/select-seats/select-seats.component';
-import { PaymentComponent } from './components/payment/payment.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import {MatSelectModule} from "@angular/material/select";
 import { LogoComponent } from './components/logo/logo.component';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { MovieFilterPipe } from './components/movies/movie-filter.pipe';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,6 @@ import { MovieFilterPipe } from './components/movies/movie-filter.pipe';
     UserSettingsComponent,
     DialogReservationComponent,
     SelectSeatsComponent,
-    PaymentComponent,
     AdminPanelComponent,
     MovieInfoComponent,
     LogoComponent,
@@ -72,7 +71,8 @@ import { MovieFilterPipe } from './components/movies/movie-filter.pipe';
         MatDialogModule,
         FormsModule,
         MatSelectModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        QRCodeModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

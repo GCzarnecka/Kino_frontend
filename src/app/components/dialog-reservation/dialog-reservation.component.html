@@ -7,7 +7,8 @@
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Go back</button>
 <!--  <a routerLink="/movie-details/{{movie.id}}">-->
-    <button mat-button  (click)="onReserveClick()">Reserve</button>
+  <button mat-flat-button (click)="buy(true)" >Buy</button>
+  <button mat-flat-button (click)="buy(false)" >Reserve</button>
 
 
     <!--  <button mat-button [mat-dialog-close]="screening" cdkFocusInitial>Purchase </button>-->

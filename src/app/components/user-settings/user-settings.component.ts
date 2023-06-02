@@ -28,4 +28,8 @@ export class UserSettingsComponent {
   pay(reservation: Reservation) {
 
   }
+
+  cancelReservation(reservation: Reservation) {
+    
+  }
 }
