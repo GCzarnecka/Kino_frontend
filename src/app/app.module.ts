@@ -31,6 +31,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import {MatSelectModule} from "@angular/material/select";
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatSelectModule} from "@angular/material/select";
     SelectSeatsComponent,
     PaymentComponent,
     AdminPanelComponent,
-    MovieInfoComponent
+    MovieInfoComponent,
+    LogoComponent
   ],
     imports: [
         BrowserModule,

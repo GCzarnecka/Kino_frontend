@@ -1,34 +1,70 @@
-<div class ="container">
-<!--  <mat-card class = "movie">-->
-<!--  <mat-grid-list class = "movie">-->
-  <div class ="item">
-    <img [src]="screenings[0].movie.poster">
-  </div>
-  <div class ="item">
-    <div class ="desc">
-      <div>{{screenings[0].movie.title}}</div>
-      <div>{{screenings[0].movie.category.name}}</div>
-
-      <div class="description">{{screenings[0].movie.description}}</div>
+<div class="parent">
+  <div class="container left">
+    <!--  <mat-card class = "movie">-->
+    <!--  <mat-grid-list class = "movie">-->
+    <div class="item">
+      <h1>{{screenings[0].movie.title}}</h1>
     </div>
-    <ul class ="days">
-      <button (click)="pickDate(day)" class="day" *ngFor="let day of getDays()">
-         {{day}}
-        </button>
+    <div class="item time">
+      <mat-icon>schedule</mat-icon>
+      <div><b>DURATION:</b>
+        <h2>{{screenings[0].movie.duration}}min</h2></div>
+    </div>
+
+    <div class="item">
+      <div class="desc">
+        <div class="description">{{screenings[0].movie.description}}</div>
+      </div>
+      <br>
+
+      <div class="info-container">
+        <div>
+          <b>CATEGORY :</b><br>
+          <b>AUTHOR :</b><br>
+          <b>AGE RESTRICTION :</b><br>
+        </div>
+
+        <div>
+          {{screenings[0].movie.category.name}}<br>
+          {{screenings[0].movie.author.name}}<br>
+          {{screenings[0].movie.ageRestriction}}<br>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="item">
+      <img [src]="screenings[0].movie.poster">
+    </div>
+  </div>
+  <!--</mat-grid-list>-->
+
+</div>
+
+
+<div>
+
+  <div class="days">
+    <ul >
+      <button mat-flat-button color="accent" (click)="pickDate(day)" class="day" *ngFor="let day of getDays()">
+        {{day}}
+      </button>
     </ul>
 
     <div class="pickedDate">
-      {{pickedDate}}
+      {{pickedDate.toDateString()}}
     </div>
-
-    <ul>
-      <button class="screening" (click)="openDialog(screening)" *ngFor="let screening of showedScreenings">
-        {{screening.id }} - {{screening.startTime}}
-      </button>
-    </ul>
   </div>
 
 
-<!--</mat-grid-list>-->
+  <ul class="screenings">
+    <button mat-flat-button (click)="openDialog(screening)" *ngFor="let screening of showedScreenings">
+      {{screening.startTime.toLocaleTimeString()}}
+    </button>
 
-  </div>
+  </ul>
+
+</div>

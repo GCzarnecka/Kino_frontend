@@ -7,14 +7,17 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  padding: 20px;
   flex-direction: column;
   align-content: center;
+  /*max-width: 20%;*/
+  flex: 1;
 }
 .item{
   margin: 10px;
   padding: 0px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  /*border: 1px solid #ccc;*/
+  /*border-radius: 5px;*/
   /*width: 200px;*/
   /*height: 300px;*/
   float: left;
@@ -30,11 +33,15 @@ img{
 
 .description{
   max-width: 800px;
+  align-items: start;
+  text-align: justify;
 }
 
-.screening {
-  cursor: pointer;
-}
+/*.screening {*/
+/*  cursor: pointer;*/
+/*}*/
+
+
 .days {
   display: flex;
   flex-wrap: wrap;
@@ -42,7 +49,13 @@ img{
   margin-top: 20px;
   align-content: center;
   list-style-type: none;
+  flex-direction: column;
 }
+
+.days ul{
+  margin-bottom: 0px;
+}
+
 .day {
   margin: 30px;
   padding: 0px;
@@ -50,4 +63,88 @@ img{
   /*height: 30px;*/
   float: left;
   text-align: center;
+}
+
+.parent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  /*flex-direction: column;*/
+  align-content: center;
+}
+
+.left{
+  flex: 2;
+}
+.time{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.time h2{
+  margin: 0;
+  /*text-align: left;*/
+}
+
+.time mat-icon{
+  height: 100%;
+  font-size: 3em;
+  padding-right: 30px;
+}
+
+
+h1{
+  font-size: 2.5em;
+}
+
+.desc b {
+  text-align: left;
+}
+
+/*.info{*/
+/*  display: flex;*/
+/*  justify-content: start;*/
+/*}*/
+
+/*.info b{*/
+/*  margin-right: 10px;*/
+/*}*/
+
+
+.info-container{
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
+.info-container div{
+  margin-right: 20px;
+}
+
+.pickedDate{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #535353;
+  font-weight: bolder;
+}
+
+.screenings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.screenings button{
+  margin-right: 20px;
+  margin-bottom: 20px;
 }

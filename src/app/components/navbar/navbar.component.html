@@ -12,10 +12,8 @@
     </button>
   </div>
 
-    <p>
-      SPOTER
-    </p>
-    <div *ngIf="!token">
+    <app-logo></app-logo>
+    <div class="login" *ngIf="!token">
       <button mat-fab extended type="submit" [routerLink] = "'login'" >Login</button>
       <button mat-fab extended type="submit" [routerLink] =" 'register'">Register</button>
     </div>
