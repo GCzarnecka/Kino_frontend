@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Movie} from "../../DataModel/Movie";
 import {MoviesService} from "../../services/movies.service";
 import {ScreeningsService} from "../../services/screenings.service";
 import {Router} from "@angular/router";
+import {debounceTime, distinctUntilChanged, Observable, startWith, Subject, switchMap} from "rxjs";
+import {FormControl} from "@angular/forms";
 
 
 @Component({
@@ -10,31 +12,24 @@ import {Router} from "@angular/router";
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent {
+export class MoviesComponent implements OnInit {
 
-  constructor(private moviesService: MoviesService,
-              private screeingsService: ScreeningsService,
-              private router: Router) { }
+  constructor(private moviesService: MoviesService) { }
 
 
   movies!:Movie[];
 
-  // movies: Array<object> = [];
-  showImage(image: number) {
-    this.router.navigate(['/', 'movie-details', image]);
-  }
+  searchText = '';
+
 
   ngOnInit(): void {
-    // this.moviesService.getMovies().subscribe(movies => movies.forEach(movie => {
-    //   this.movies.push({image: movie.poster, title: movie.title, thumbImage: movie.poster});
-    //   console.log(movie);
-    // }));
+
     this.moviesService.getMovies().subscribe(movies => {
       this.movies = movies;
       console.log(this.movies);
     });
-    // this.screeingsService.getScreeningsForMovie(6).subscribe(screenings =>
-    //   console.log(screenings));
+
+
   }
 
 }

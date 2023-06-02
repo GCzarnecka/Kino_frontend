@@ -7,7 +7,11 @@
 
 
 <div class="parent">
+  <mat-form-field >
+    <mat-label>Movie</mat-label>
+    <input [(ngModel)]="searchText" matInput  placeholder="Movie name" value="">
+  </mat-form-field>
   <div class="movies-container" >
-    <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+    <app-movie *ngFor="let movie of movies | movieFilter: searchText" [movie]="movie"></app-movie>
   </div>
 </div>

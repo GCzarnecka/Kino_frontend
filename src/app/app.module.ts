@@ -32,6 +32,8 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import {MatSelectModule} from "@angular/material/select";
 import { LogoComponent } from './components/logo/logo.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { MovieFilterPipe } from './components/movies/movie-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { LogoComponent } from './components/logo/logo.component';
     PaymentComponent,
     AdminPanelComponent,
     MovieInfoComponent,
-    LogoComponent
+    LogoComponent,
+    MovieFilterPipe
   ],
     imports: [
         BrowserModule,
@@ -68,7 +71,8 @@ import { LogoComponent } from './components/logo/logo.component';
         MatGridListModule,
         MatDialogModule,
         FormsModule,
-        MatSelectModule
+        MatSelectModule,
+        MatAutocompleteModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
