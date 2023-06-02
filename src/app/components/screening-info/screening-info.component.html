@@ -1,0 +1,33 @@
+<!--movie: Movie;-->
+<!--cinemaRoom: CinemaRoom;-->
+<!--startTime: Date;-->
+
+<!--price: number;-->
+<!--       formControlName="scheduledStartDateTime"-->
+
+<div class="container">
+<mat-form-field>
+  <mat-label>Movies</mat-label>
+  <mat-select [(ngModel)]="movie">
+    <mat-option *ngFor="let movie of movies" [value]="movie">{{movie.title}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Rooms</mat-label>
+  <mat-select [(ngModel)]="room">
+    <mat-option *ngFor="let room of rooms" [value]="room">{{room.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <input type="number" matInput placeholder="Price" [(ngModel)]="price">
+</mat-form-field>
+
+<mat-form-field>
+  <input [(ngModel)]="startTime" matInput type="datetime-local" placeholder="start date">
+</mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="add()">Add</button>
+
+</div>

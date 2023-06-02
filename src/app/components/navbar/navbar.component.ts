@@ -1,5 +1,8 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogReservationComponent} from "../dialog-reservation/dialog-reservation.component";
+import {AdminPanelComponent} from "../admin-panel/admin-panel.component";
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +15,7 @@ export class NavbarComponent implements OnInit, DoCheck{
 
   public isAdmin: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.token = this.getToken();
@@ -32,6 +35,14 @@ export class NavbarComponent implements OnInit, DoCheck{
 
   private getToken(): string | null {
     return localStorage.getItem('authToken');
+  }
+
+  admin() {
+    const dialogRef = this.dialog.open(AdminPanelComponent, {
+
+    });
+
+    dialogRef.afterClosed().subscribe();
   }
 
 }

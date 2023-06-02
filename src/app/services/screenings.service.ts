@@ -13,4 +13,8 @@ export class ScreeningsService {
     return this.restService.get<Screening[]>('api/screenings', {movieId: movieId});
   }
 
+  addScreening(screening: Screening) {
+    return this.restService.post<Screening>('api/screenings', screening);
+  }
+
 }

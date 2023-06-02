@@ -1,13 +1,26 @@
-{{user.email}}
-<ul>
-  <li *ngFor="let reservation of user.reservations">
-    {{reservation.screening.movie.title}} -
-    {{reservation.screening.cinemaRoom.name}} -
-    {{reservation.screening.startTime}} -
-    {{reservation.seatsIds}}-
-    <button *ngIf="!reservation.paid" mat-flat-button color="primary" (click)="pay(reservation)">Pay for reservation</button>
-    <button *ngIf="!reservation.paid" mat-flat-button color="warn" (click)="cancelReservation(reservation)">Cancel reservation</button>
+<h1>Your reservations:</h1>
 
-    <button *ngIf="reservation.paid" mat-flat-button color="accent" >Download ticket</button>
-  </li>
-</ul>
+<div class="container">
+  <ul>
+    <li *ngFor="let reservation of user.reservations">
+      <div class="text">
+        {{reservation.screening.movie.title}}<br>
+        {{reservation.screening.cinemaRoom.name}} <br>
+        {{reservation.screening.startTime}} <br>
+        {{reservation.seatsIds}}
+      </div>
+      <div>
+        <button *ngIf="!reservation.paid" mat-flat-button color="primary" (click)="pay(reservation)">Pay for
+          reservation
+        </button>
+        <button *ngIf="!reservation.paid" mat-flat-button color="warn" (click)="cancelReservation(reservation)">Cancel
+          reservation
+        </button>
+        <button *ngIf="reservation.paid" mat-flat-button color="accent" (click)="downloadTicket(reservation)">Download
+          ticket
+        </button>
+      </div>
+    </li>
+  </ul>
+
+</div>

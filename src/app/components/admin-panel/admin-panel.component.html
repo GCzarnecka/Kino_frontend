@@ -1,6 +1,14 @@
-<button mat-flat-button [routerLink]="['movie-info', false]">
-  Dodaj
+<div class="container">
+
+<button mat-flat-button (click)="closeDialog()" [routerLink]="['admin-panel/movie-info', false]">
+  Add movie
 </button>
-<button mat-flat-button [routerLink]="['movie-info', true]">
-  Edytuj film
+<button mat-flat-button (click)="closeDialog()" [routerLink]="['admin-panel/movie-info', true]">
+  Edit movie
 </button>
+
+<button mat-flat-button (click)="closeDialog()" [routerLink]="['admin-panel/screening-info']">
+  Add screening
+</button>
+
+</div>

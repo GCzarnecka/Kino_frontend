@@ -11,9 +11,16 @@ mat-toolbar {
 p {
   color: white;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container button{
   margin-right: 10px;
-
+  margin-left: 10px;
 }
 
 

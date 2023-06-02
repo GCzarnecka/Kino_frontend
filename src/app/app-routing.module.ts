@@ -8,6 +8,7 @@ import {MovieDetailsComponent} from "./components/movie-details/movie-details.co
 import {UserSettingsComponent} from "./components/user-settings/user-settings.component";
 import {AdminPanelComponent} from "./components/admin-panel/admin-panel.component";
 import {MovieInfoComponent} from "./components/movie-info/movie-info.component";
+import {ScreeningInfoComponent} from "./components/screening-info/screening-info.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'account', component: UserSettingsComponent},
   {path: 'movie-details/:id', component: MovieDetailsComponent},
   {path: 'admin-panel', component: AdminPanelComponent},
-  {path: 'admin-panel/movie-info/:edit', component: MovieInfoComponent},];
+  {path: 'admin-panel/movie-info/:edit', component: MovieInfoComponent},
+  {path: 'admin-panel/screening-info', component:ScreeningInfoComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

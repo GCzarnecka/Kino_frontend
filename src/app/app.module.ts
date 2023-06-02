@@ -34,6 +34,10 @@ import { LogoComponent } from './components/logo/logo.component';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { MovieFilterPipe } from './components/movies/movie-filter.pipe';
 import { QRCodeModule } from 'angularx-qrcode';
+import { DialogTicketComponent } from './components/dialog-ticket/dialog-ticket.component';
+import { ScreeningInfoComponent } from './components/screening-info/screening-info.component';
+import {NgxMatDatetimePickerModule, NgxMatTimepickerModule} from "@angular-material-components/datetime-picker";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -52,28 +56,37 @@ import { QRCodeModule } from 'angularx-qrcode';
     AdminPanelComponent,
     MovieInfoComponent,
     LogoComponent,
-    MovieFilterPipe
+    MovieFilterPipe,
+    DialogTicketComponent,
+    ScreeningInfoComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatSlideToggleModule,
-        MatCardModule,
-        NgImageSliderModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        AppRoutingModule,
-        MatIconModule,
-        MatGridListModule,
-        MatDialogModule,
-        FormsModule,
-        MatSelectModule,
-        MatAutocompleteModule,
-        QRCodeModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    NgImageSliderModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    AppRoutingModule,
+    MatIconModule,
+    MatGridListModule,
+    MatDialogModule,
+    FormsModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    QRCodeModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMatTimepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    NgxMatDatetimePickerModule,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

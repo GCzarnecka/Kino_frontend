@@ -2,17 +2,17 @@
 <mat-toolbar>
   <mat-toolbar-row>
   <div class = "container">
-    <button mat-fab extended [routerLink]="'home'">
-      <mat-icon>home</mat-icon>
-      Home
-    </button>
-    <button *ngIf="isAdmin" mat-fab extended [routerLink]="'admin-panel'">
+<!--    <button mat-fab extended [routerLink]="'home'">-->
+<!--      <mat-icon>home</mat-icon>-->
+<!--      Home-->
+<!--    </button>-->
+    <app-logo></app-logo>
+    <button *ngIf="isAdmin" mat-fab extended (click)="admin()">
       <mat-icon>build</mat-icon>
       Admin panel
     </button>
   </div>
 
-    <app-logo></app-logo>
     <div class="login" *ngIf="!token">
       <button mat-fab extended type="submit" [routerLink] = "'login'" >Login</button>
       <button mat-fab extended type="submit" [routerLink] =" 'register'">Register</button>

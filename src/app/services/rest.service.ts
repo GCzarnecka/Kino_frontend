@@ -22,6 +22,11 @@ export class RestService {
   }
 
   post <T>(path: string, body: any) {
+    console.log('dasdsadas',body);
     return this.http.post<T>(this.url + path, body);
+  }
+
+  delete<T>(path: string, id: number) {
+    return this.http.delete<T>(this.url + path + '/' + id);
   }
 }
