@@ -25,4 +25,8 @@ export class DialogTicketComponent {
     this.reservationText = JSON.stringify(data);
   }
 
+  closeDialog() {
+    this.dialogRef.close();
+  }
+
 }

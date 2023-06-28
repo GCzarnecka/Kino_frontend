@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectSeatsComponent } from './select-seats.component';
+import {NO_ERRORS_SCHEMA} from "@angular/core";
 
 describe('SelectSeatsComponent', () => {
   let component: SelectSeatsComponent;
@@ -8,7 +9,8 @@ describe('SelectSeatsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SelectSeatsComponent ]
+      declarations: [ SelectSeatsComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

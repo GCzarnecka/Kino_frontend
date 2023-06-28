@@ -16,17 +16,6 @@ export class MovieDetailsComponent {
 
   screenings: Array<Screening> = [];
   ngOnInit(): void {
-    // this.route.paramMap.pipe(
-    //   switchMap((params: ParamMap) =>
-    //     params.get('id')!)).subscribe(id => {
-    //   this.screeningService.getScreeningsForMovie(parseInt(id))
-    //     .subscribe(screenings => {
-    //     this.screenings = screenings;
-    //     console.log(id,this.screenings);
-    //   });
-    //   }
-    // )
-
     const id = this.route.snapshot.paramMap.get('id');
     if(id) {
       this.screeningService.getScreeningsForMovie(parseInt(id))

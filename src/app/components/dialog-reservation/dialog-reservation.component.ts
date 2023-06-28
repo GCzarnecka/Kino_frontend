@@ -18,7 +18,7 @@ export class DialogReservationComponent {
     private reservationService: ReservationService
   ) {}
 
-  private takenSeats: number[] = [];
+  takenSeats: number[] = [];
 
   onNoClick(): void {
     this.dialogRef.close();

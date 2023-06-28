@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserSettingsComponent } from './user-settings.component';
+import {NO_ERRORS_SCHEMA} from "@angular/core";
 
 describe('UserSettingsComponent', () => {
   let component: UserSettingsComponent;
@@ -8,7 +9,8 @@ describe('UserSettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserSettingsComponent ]
+      declarations: [ UserSettingsComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
 

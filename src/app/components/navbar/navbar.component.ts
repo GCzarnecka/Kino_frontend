@@ -21,26 +21,19 @@ export class NavbarComponent implements OnInit, DoCheck{
     this.token = this.getToken();
     this.userService.getUser().subscribe(user => {
       this.isAdmin = user.role === 'ADMIN';
-      // console.log(user);
     });
-    // this.userService.getUser(
-    // ).subscribe( user => {
-    //   this.isAdmin = user.isAdmin
-    // });
   }
 
   ngDoCheck(): void {
     this.token = this.getToken()
   }
 
-  private getToken(): string | null {
+  getToken(): string | null {
     return localStorage.getItem('authToken');
   }
 
   admin() {
-    const dialogRef = this.dialog.open(AdminPanelComponent, {
-
-    });
+    const dialogRef = this.dialog.open(AdminPanelComponent, {});
 
     dialogRef.afterClosed().subscribe();
   }
